@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.bitcubed"
-version = "SNAPSHOT-0.9.1"
+version = "SNAPSHOT-0.9.2"
 
 repositories {
     mavenCentral()
@@ -28,7 +28,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.bitcubed"
             artifactId = "commander"
-            version = "SNAPSHOT-0.9.1"
+            version = "SNAPSHOT-0.9.2"
 
             from(components["java"])
         }
