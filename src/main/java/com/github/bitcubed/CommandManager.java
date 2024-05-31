@@ -92,6 +92,7 @@ public class CommandManager {
                 return Collections.emptyList();
             }
         };
+        getCommandMap().register(plugin.getName(), baseCommand);
     }
 
     /**
