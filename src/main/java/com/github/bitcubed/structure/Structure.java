@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents the structure of the plugin command.
  *
- * @since 1.0
+ * @since 0.9
  * @author Bit³ Studios
  */
 public class Structure {

@@ -22,7 +22,7 @@ import static org.joor.Reflect.*;
 /**
  * A class used in managing plugin commands.
  *
- * @since 1.0
+ * @since 0.9
  * @author Bit³ Studios
  */
 public class CommandManager {

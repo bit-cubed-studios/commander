@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 /**
  * An annotation that marks the class as a plugin command.
  *
- * @since 1.0
+ * @since 0.9
  * @author Bit³ Studios
  */
 @Target(ElementType.TYPE)

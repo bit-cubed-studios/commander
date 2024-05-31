@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * An annotation that marks the method as the
  * argument of the plugin command.
  *
- * @since 1.0
+ * @since 0.9
  * @author Bit³ Studios
  */
 @Target(ElementType.METHOD)

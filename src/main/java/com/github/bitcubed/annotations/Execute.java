@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * An annotation that marks the method as the
  * plugin command's executor.
  *
- * @since 1.0
+ * @since 0.9
  * @author Bit³ Studios
  */
 @Target(ElementType.METHOD)
