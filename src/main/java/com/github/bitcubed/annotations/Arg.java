@@ -16,9 +16,9 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Argument {
+public @interface Arg {
 
-    @NotNull String name();
+    @NotNull String name() default "";
 
     int index();
 

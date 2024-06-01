@@ -1,8 +1,9 @@
 package com.github.bitcubed;
 
-import com.github.bitcubed.annotations.Argument;
+import com.github.bitcubed.annotations.Arg;
 import com.github.bitcubed.annotations.Execute;
 import com.github.bitcubed.annotations.PluginCommand;
+import com.github.bitcubed.structure.Argument;
 import com.github.bitcubed.structure.Structure;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -50,8 +51,8 @@ public class CommandManager {
                                                      .findAny();
 
         final Set<Method> argumentMethods = Arrays.stream(targetClass.getMethods())
-                                                     .filter(method -> method.isAnnotationPresent(Argument.class))
-                                                     .findAny().stream().collect(Collectors.toSet());
+                                                  .filter(method -> method.isAnnotationPresent(Arg.class))
+                                                  .collect(Collectors.toSet());
 
         final PluginCommand.Initiator targetInitiator = pluginCommand.targetInitiator();
 
@@ -71,14 +72,14 @@ public class CommandManager {
                     executeMethod.ifPresent(method -> on(object).call(method.getName(), structure));
 
                     argumentMethods.forEach(method -> {
-                        final Argument argument = method.getAnnotation(Argument.class);
+                        final Arg arg = method.getAnnotation(Arg.class);
 
-                        final String name = argument.name();
-                        final int targetIndex = argument.index();
+                        final String name = arg.name();
+                        final int targetIndex = arg.index();
 
                         if(targetIndex < args.length && name.equalsIgnoreCase(args[targetIndex])) {
 
-                            on(object).call(method.getName(), structure);
+                            on(object).call(method.getName(), structure, new Argument(args[targetIndex]));
 
                         }
                     });
