@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.bitcubed"
-version = "SNAPSHOT-0.9.2"
+version = "SNAPSHOT-0.9.3"
 
 repositories {
     mavenCentral()
@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.13-R0.1-SNAPSHOT")
-    compileOnly("org.jooq:joor:0.9.14")
+    implementation("org.jooq:joor:0.9.14")
     implementation("org.jetbrains:annotations:24.0.0")
 }
 
@@ -28,7 +28,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.bitcubed"
             artifactId = "commander"
-            version = "SNAPSHOT-0.9.2"
+            version = "SNAPSHOT-0.9.3"
 
             from(components["java"])
         }
